@@ -31,7 +31,7 @@ function Ganttalendar(zoom, startmillis, endMillis, master, minGanttSize) {
 
   this.zoom = zoom;
   this.minGanttSize = minGanttSize;
-  this.includeToday = true; //when true today is always visible. If false boundaries comes from tasks periods
+  this.includeToday = false; //when true today is always visible. If false boundaries comes from tasks periods
   this.showCriticalPath = false; //when true critical path is highlighted
 
   this.zoomLevels = ["d", "w", "m", "q", "s", "y"];
@@ -65,7 +65,7 @@ Ganttalendar.prototype.zoomGantt = function (isPlus) {
 
 
 Ganttalendar.prototype.create = function (zoom, originalStartmillis, originalEndMillis) {
-  //console.debug("Gantt.create " + new Date(originalStartmillis) + " - " + new Date(originalEndMillis));
+  console.debug("Gantt.create " + new Date(originalStartmillis) + " - " + new Date(originalEndMillis));
 
   var self = this;
 

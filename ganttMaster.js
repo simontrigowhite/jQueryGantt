@@ -40,6 +40,7 @@ function GanttMaster() {
 
   this.canWriteOnParent = true;
   this.canWrite = true;
+  this.shrinkTable = false;
 
   this.firstDayOfWeek = Date.firstDayOfWeek;
 
@@ -56,7 +57,8 @@ function GanttMaster() {
 
 
 
-GanttMaster.prototype.init = function (place) {
+GanttMaster.prototype.init = function (place, startMillis, endMillis) {
+
   this.element = place;
   var self = this;
   //load templates
@@ -67,7 +69,8 @@ GanttMaster.prototype.init = function (place) {
   place.append(this.editor.gridified);
 
   //create gantt
-  this.gantt = new Ganttalendar("m", new Date().getTime() - 3600000 * 24 * 2, new Date().getTime() + 3600000 * 24 * 15, this, place.width() * .6);
+  //this.gantt = new Ganttalendar("m", new Date().getTime() - 3600000 * 24 * 2, new Date().getTime() + 3600000 * 24 * 15, this, place.width() * .6);
+  this.gantt = new Ganttalendar("m", startMillis, endMillis, this, place.width() * .6);
 
   //setup splitter
   self.splitter = $.splittify.init(place, this.editor.gridified, this.gantt.element, 60);
@@ -864,16 +867,18 @@ GanttMaster.prototype.endTransaction = function () {
     //clear redo stack
     this.__redoStack = [];
 
-    //shrink gantt bundaries
-    this.gantt.originalStartMillis = Infinity;
-    this.gantt.originalEndMillis = -Infinity;
-    for (var i = 0; i < this.tasks.length; i++) {
-      var task = this.tasks[i];
-      if (this.gantt.originalStartMillis > task.start)
-        this.gantt.originalStartMillis = task.start;
-      if (this.gantt.originalEndMillis < task.end)
-        this.gantt.originalEndMillis = task.end;
+      //shrink gantt bundaries
+    if (this.shrinkTable) {
+        this.gantt.originalStartMillis = Infinity;
+        this.gantt.originalEndMillis = -Infinity;
+        for (var i = 0; i < this.tasks.length; i++) {
+            var task = this.tasks[i];
+            if (this.gantt.originalStartMillis > task.start)
+                this.gantt.originalStartMillis = task.start;
+            if (this.gantt.originalEndMillis < task.end)
+                this.gantt.originalEndMillis = task.end;
 
+        }
     }
     this.taskIsChanged(); //enqueue for gantt refresh
 
