@@ -45,7 +45,7 @@ function GanttMaster() {
 
   this.currentTask; // task currently selected;
 
-  this.resourceUrl = 'res/'; // URL to resources (images etc.)
+  this.resourceUrl = '../Content/TW/res/'; // URL to resources (images etc.)
   this.__currentTransaction;  // a transaction object holds previous state during changes
   this.__undoStack = [];
   this.__redoStack = [];
@@ -60,7 +60,7 @@ GanttMaster.prototype.init = function (place) {
   this.element = place;
   var self = this;
   //load templates
-  $("#gantEditorTemplates").loadTemplates().remove();
+  $("#" + gantEditorTemplates).loadTemplates().remove();
 
   //create editor
   this.editor = new GridEditor(this);

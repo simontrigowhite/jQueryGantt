@@ -12,7 +12,7 @@
 
 
 
-*{
+.gantt *{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing:border-box;
@@ -24,59 +24,63 @@
   body styles
   -------------------------------------------------------
   */
-BODY, TBODY {
-  font-family: arial;
+.gantt BODY, .gantt TBODY {
+  /*font-family: arial;
   font-size: 14px;
   margin: 0;
   color: #000000;
-  text-decoration: none;
+  text-decoration: none;*/
 }
 
-BODY {
+.gantt BODY {
   background-color: #91B4B7; 
 }
 
-a {
+.gantt a {
   text-decoration: none;
-  font-weight: bold;
-  color: #16ABDD;
+  /*font-weight: bold;
+  color: #16ABDD;*/
+  color: #2a7d9a;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-a:hover, a.aHover {
-  color: #0C85AD;
-  text-decoration: underline;
+.gantt a:hover, a.aHover {
+  /*color: #0C85AD;
+  text-decoration: underline;*/
+  color: #359ec2;
 }
 
-h1 {
-  font-size:32px;
+.gantt h1 {
+  /*font-size:32px;
   line-height: 34px;
   color:#91B4B7;
   font-weight:normal;
-  margin:0 0 10px 0
+  margin:0 0 10px 0*/
 }
 
-h2 {
+.gantt h2 {
   font-size:22px;
   color:#373737;
   font-weight:normal;
   margin:0 0 10px 0
 }
 
-h3 {
+.gantt h3 {
   text-decoration: none;
   color: #000000;
   font-size: 16px;
   margin: 0;
 }
 
-h4 {
+.gantt h4 {
   font-size:16px;
   padding:5px 0;
   color:#617777;
   margin:0
 }
 
-#savingMessage{
+.gantt #savingMessage{
   background-color:#E3EDED;
   display:none;
   color:#617777;
@@ -95,7 +99,7 @@ h4 {
   -o-box-shadow:0 3px 2px rgba(0,0,0,0.4);
 }
 
-.waiting{
+.gantt .waiting{
   cursor:progress;
 }
 
@@ -106,27 +110,27 @@ h4 {
   */
 
 
-.teamworkIcon {
+.gantt .teamworkIcon {
   font-family: 'TeamworkRegular', arial, sans-serif;
   color:#617777;
   font-weight:normal;
   font-size:120%
 }
 
-.teamworkIcon.withLabel {
+.gantt .teamworkIcon.withLabel {
   padding-right:5px;
 }
 
 
-.button:hover .teamworkIcon {
+.gantt .button:hover .teamworkIcon {
   opacity: 0.8
 }
 
-.teamworkIcon.alert {
+.gantt .teamworkIcon.alert {
   color:#B61E2D;
 }
 
-.cvcColorSquare{
+.gantt .cvcColorSquare{
   display:inline-block;
   text-align:left;
   border:#fff 0px solid;
@@ -139,13 +143,13 @@ h4 {
   cursor: pointer;
 }
 
- .cvcColorSquare:hover{
+.gantt .cvcColorSquare:hover{
   opacity:.7;
 }
 
 
 
-.unselectable {
+.gantt .unselectable {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -154,17 +158,17 @@ h4 {
 }
 
 
-.ui-resizable { position: relative;}
-.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
-.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
-.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
-.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
-.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
-.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
-.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
-.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
-.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
-.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+.gantt .ui-resizable { position: relative;}
+.gantt .ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
+.gantt .ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.gantt .ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.gantt .ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.gantt .ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.gantt .ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.gantt .ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.gantt .ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.gantt .ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.gantt .ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
 
 
   /*
@@ -173,11 +177,11 @@ h4 {
   -------------------------------------------------------
   */
 
-.table {
+.gantt .table {
   width: 100%;
 }
 
-TH, .tableHeader {
+.gantt TH,.gantt .tableHeader {
   font-weight: normal;
   color: #FFFFFF;
   border: none;
@@ -185,7 +189,7 @@ TH, .tableHeader {
   padding:2px
 }
 
-TH a {
+.gantt TH a {
   color: #FFFFFF;
 }
 
@@ -197,7 +201,7 @@ TH a {
   -------------------------------------------------------
   */
 
-.button {
+.gantt .button {
   display:inline-block;
   font-size:110%;
   font-family:Arial, sans-serif;
@@ -220,27 +224,27 @@ TH a {
 }
 
 
-.button.first {
+.gantt .button.first {
     background-color:#FEA730;
     font-weight: bold;
 }
-.button.first:hover {
+.gantt .button.first:hover {
     background-color:#D98E2A;
 }
 
 
 
-.button[disabled] {
+.gantt .button[disabled] {
   cursor: default;
   opacity:0.4
 }
 
 
-.button:hover[disabled] {
+.gantt .button:hover[disabled] {
   background-color:#BABABA
 }
 
-.button.textual, .button.buttonImg {
+.gantt .button.textual, .gantt .button.buttonImg {
   border: none;
   background-color: transparent;
   color:#68979B;
@@ -259,51 +263,51 @@ TH a {
 
 
 
-.button.edit {
+.gantt .button.edit {
   color:#009E94;
   padding:0;
   margin:0
 }
 
-.button.delete {
+.gantt .button.delete {
   color:#B61E2D;
   padding:0;
   margin:0
 }
 
-.button:hover {
+.gantt .button:hover {
   background-color: #4C4C4C;
 }
-.button.textual:hover, .button.buttonImg:hover {
+.gantt .button.textual:hover, .gantt .button.buttonImg:hover {
   background-color: transparent;
 }
 
-span.separator {
+.gantt span.separator {
   display: inline-block;
 }
 
-.button.add {
+.gantt .button.add {
   color:#009E94;
 }
 
-.button.add .teamworkIcon {
+.gantt .button.add .teamworkIcon {
   color:#009E94;
 }
 
 
-form {
+.gantt form {
   margin: 0;
   padding: 0;
 }
 
-select {
+.gantt select {
   border:1px solid #91B4B7;
   padding: 4px;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.formElements {
+.gantt .formElements {
   background-color: white;
   padding: 4px;
   font-size: 16px;
@@ -315,11 +319,11 @@ select {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.formElementsError {
+.gantt .formElementsError {
   border: 1px solid #ff0000;
 }
 
-.formElementExclamation {
+.gantt .formElementExclamation {
   width: 15px;
   height: 25px;
   mmmargin-left: -20px;
@@ -328,13 +332,13 @@ select {
 }
 
 
-span#FLD_LOGIN_NAMEerror, span#FLD_PWDerror {
+.gantt span#FLD_LOGIN_NAMEerror, span#FLD_PWDerror {
   margin-left: -23px;
   margin-top: 2px;
 }
 
 
-input {
+.gantt input {
     background-color: white;
     padding: 4px;
     font-size: 16px;
